@@ -5,7 +5,7 @@
         <then>
             <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
                 <encoder>
-                    <pattern>%d{HH:mm:ss.SSS} [%-5level] %logger{15} - %msg%n%rEx</pattern>
+                    <pattern>%date{yyy-MM-dd'T'HH:mm:ss.SSSXXX, UTC} ${PROJECT:-debug}%replace(%msg){'[\r\n]+', ' '}%n</pattern>
                 </encoder>
             </appender>
         </then>
@@ -13,14 +13,21 @@
 
     <if condition='property("FILE_LOGGING").contains("ON")'>
         <then>
-            <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-                <file>target/gatling/gatling.log</file>
+            <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+                <filter class="ch.qos.logback.classic.filter.LevelFilter">
+                    <level>DEBUG</level>
+                    <onMatch>ACCEPT</onMatch>
+                    <onMismatch>DENY</onMismatch>
+                </filter>
                 <encoder>
-                    <pattern>%d{HH:mm:ss.SSS} [%-5level] %logger{15} - %msg%n%rEx</pattern>
+                    <pattern>%date{yyy-MM-dd'T'HH:mm:ss.SSSXXX, UTC} ${PROJECT:-debug}%replace(%msg){'[\r\n]+', ' '}%n</pattern>
                 </encoder>
-            </appender>
-            <appender name="ASYNC_FILE" class="ch.qos.logback.classic.AsyncAppender">
-                <appender-ref ref="FILE"/>
+                <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                    <fileNamePattern>target/gatling-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+                    <maxFileSize>100MB</maxFileSize>
+                    <maxHistory>5</maxHistory>
+                    <totalSizeCap>500MB</totalSizeCap>
+                </rollingPolicy>
             </appender>
         </then>
     </if>
