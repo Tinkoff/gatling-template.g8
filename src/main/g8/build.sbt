@@ -12,7 +12,7 @@ lazy val root = (project in file("."))
     name := "$name$",
     libraryDependencies ++= gatling,
     libraryDependencies ++= gelf,
-    libraryDependencies ++= gatlingUtils,
+    libraryDependencies ++= gatlingPicatinny,
     libraryDependencies ++= janino,
     scalacOptions ++= Seq(
       "-encoding", "UTF-8",

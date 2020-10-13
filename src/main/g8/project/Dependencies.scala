@@ -10,7 +10,7 @@ object Dependencies {
     "de.siegmar" % "logback-gelf"
   ).map(_ % "2.1.0")
 
-  lazy val gatlingUtils: Seq[ModuleID] = Seq(
+  lazy val gatlingPicatinny: Seq[ModuleID] = Seq(
     "ru.tinkoff" %% "gatling-picatinny"
   ).map(_ % "$gatling_picatinny_version$")
 
