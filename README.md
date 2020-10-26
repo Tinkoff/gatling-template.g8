@@ -14,6 +14,11 @@ the project structure will be ru/tinkoff/load/
 
 How to install sbt <https://www.scala-sbt.org/1.x/docs/Setup.html>.
 
+Known bugs
+----------------
+At the moment, when running on OS Windows, there is a problem - the temporary file `.gitignore` is not deleted. 
+This does not affect project creation. There is a bug on the problem <https://github.com/foundweekends/giter8/issues/477>.
+
 Template license
 ----------------
 Written in 2020 by Chepkasov Sergey s.chepkasov@tinkoff.ru
