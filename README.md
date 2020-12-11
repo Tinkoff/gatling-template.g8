@@ -14,6 +14,17 @@ the project structure will be ru/tinkoff/load/
 
 How to install sbt <https://www.scala-sbt.org/1.x/docs/Setup.html>.
 
+Overriding variable environment
+----------------
+
+In **Gatling version 3.4.2**, the **typesafe.config** library was updated, where,
+for security reasons, they removed the loading of all variables from ENV into the config.
+To override a variable from **simulation.conf** you need:
+1. By setting the JVM property `-Dconfig.override_with_env_vars=true`;
+2. Pass the variable in the `CONFIG_FORCE_variablesName` format, for example `CONFIG_FORCE_intensity=100`.
+
+More details [here](https://github.com/lightbend/config#optional-system-or-env-variable-overrides).
+
 Known bugs
 ----------------
 At the moment, when working in Windows with using SBT version lower than 1.4.1 there is a problem - the temporary .gitignore file is not deleted. This does not affect project creation.
