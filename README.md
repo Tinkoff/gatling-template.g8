@@ -14,6 +14,10 @@ the project structure will be ru/tinkoff/load/
 
 How to install sbt <https://www.scala-sbt.org/1.x/docs/Setup.html>.
 
+Сreating a template by tag
+----------------
+You can create a template for a specific tag, for example like this `sbt new TinkoffCreditSystems/gatling-template.g8 --tag v0.2.4`.
+
 Overriding variable environment
 ----------------
 

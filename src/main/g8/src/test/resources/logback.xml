@@ -20,13 +20,13 @@
                     <onMismatch>DENY</onMismatch>
                 </filter>
                 <encoder>
-                    <pattern>%date{yyy-MM-dd'T'HH:mm:ss.SSSXXX, UTC} ${PROJECT:-debug}%replace(%msg){'[\r\n]+', ' '}%n</pattern>
+                    <pattern>%date{yyy-MM-dd'T'HH:mm:ss.SSSXXX, UTC} ${CI_PROJECT_NAME:-debug}%replace(%msg){'[\r\n]+', ' '}%n</pattern>
                 </encoder>
                 <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-                    <fileNamePattern>target/gatling-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-                    <maxFileSize>100MB</maxFileSize>
+                    <fileNamePattern>/vector_logs/${CI_PROJECT_NAME}/gatling-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+                    <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
                     <maxHistory>5</maxHistory>
-                    <totalSizeCap>500MB</totalSizeCap>
+                    <totalSizeCap>1500MB</totalSizeCap>
                 </rollingPolicy>
             </appender>
 
