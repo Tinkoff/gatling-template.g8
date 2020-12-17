@@ -24,9 +24,9 @@
                 </encoder>
                 <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
                     <fileNamePattern>target/gatling-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-                    <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
+                    <maxFileSize>100MB</maxFileSize>
                     <maxHistory>5</maxHistory>
-                    <totalSizeCap>1500MB</totalSizeCap>
+                    <totalSizeCap>500MB</totalSizeCap>
                 </rollingPolicy>
             </appender>
 
