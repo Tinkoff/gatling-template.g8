@@ -40,7 +40,7 @@ read: https://github.com/TinkoffCreditSystems/gatling-picatinny/blob/master/READ
 1. Debug test with 1 user, requires proxy on localhost:8888, eg using Fiddler or Wireshark
 
 ```
-"gatling:testOnly $package$.$name;format="word"$.Debug"
+"gatling /testOnly $package$.$name;format="word"$.Debug"
 ```
 
 2. Run test from IDEA with breakpoints
@@ -52,8 +52,8 @@ $package$.GatlingRunner
 ## Launch test
 
 ```
-"gatling:testOnly $package$.$name;format="word"$.MaxPerformance" - maximum performance test
-"gatling:testOnly $package$.$name;format="word"$.Stability" - stability test
+"gatling / testOnly $package$.$name;format="word"$.MaxPerformance" - maximum performance test
+"gatling / testOnly $package$.$name;format="word"$.Stability" - stability test
 ```
 
 ## Help
