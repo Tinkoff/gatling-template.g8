@@ -1,13 +1,21 @@
 // This build is for this Giter8 template.
 // To test the template run `g8` or `g8Test` from the sbt session.
 // See http://www.foundweekends.org/giter8/testing.html#Using+the+Giter8Plugin for more details.
-lazy val root = (project in file(".")).
-  enablePlugins(SbtPlugin).
-  settings(
-    name := "example-gatling.g8",
-    test in Test := {
-      val _ = (g8Test in Test).toTask("").value
+lazy val root = (project in file("."))
+  .enablePlugins(SbtPlugin)
+  .settings(
+    name        := "template-gatling.g8",
+    Test / test := {
+      val _ = (Test / g8Test).toTask("").value
     },
-    scriptedLaunchOpts ++= List("-Xms1024m", "-Xmx1024m", "-XX:ReservedCodeCacheSize=128m", "-XX:MaxPermSize=256m", "-Xss2m", "-Dfile.encoding=UTF-8"),
-    resolvers += Resolver.url("typesafe", url("https://repo.typesafe.com/typesafe/ivy-releases/"))(Resolver.ivyStylePatterns)
+    scalacOptions ++= Seq(
+      "-encoding",
+      "utf8", // Option and arguments on same line
+      "-deprecation",
+      "-unchecked",
+      "-language:implicitConversions",
+      "-language:higherKinds",
+      "-language:existentials",
+      "-language:postfixOps",
+    ),
   )

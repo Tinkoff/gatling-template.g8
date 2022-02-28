@@ -1,7 +1,9 @@
+[![Scala Steward badge](https://img.shields.io/badge/Scala_Steward-helping-blue.svg?style=flat&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAMAAAARSr4IAAAAVFBMVEUAAACHjojlOy5NWlrKzcYRKjGFjIbp293YycuLa3pYY2LSqql4f3pCUFTgSjNodYRmcXUsPD/NTTbjRS+2jomhgnzNc223cGvZS0HaSD0XLjbaSjElhIr+AAAAAXRSTlMAQObYZgAAAHlJREFUCNdNyosOwyAIhWHAQS1Vt7a77/3fcxxdmv0xwmckutAR1nkm4ggbyEcg/wWmlGLDAA3oL50xi6fk5ffZ3E2E3QfZDCcCN2YtbEWZt+Drc6u6rlqv7Uk0LdKqqr5rk2UCRXOk0vmQKGfc94nOJyQjouF9H/wCc9gECEYfONoAAAAASUVORK5CYII=)](https://scala-steward.org)
+
 A [Giter8][g8] template for gatling performance test project
 
-How to use
-----------------
+## How to use
+
 `sbt new TinkoffCreditSystems/gatling-template.g8`
 
 Enter the name of your service in the **name** field.
@@ -14,8 +16,7 @@ the project structure will be ru/tinkoff/load/
 
 How to install sbt <https://www.scala-sbt.org/1.x/docs/Setup.html>.
 
-Overriding variable environment
-----------------
+## Overriding variable environment
 
 In **Gatling version 3.4.2**, the **typesafe.config** library was updated, where,
 for security reasons, they removed the loading of all variables from ENV into the config.
@@ -25,12 +26,12 @@ To override a variable from **simulation.conf** you need:
 
 More details [here](https://github.com/lightbend/config#optional-system-or-env-variable-overrides).
 
-Known bugs
-----------------
+## Known bugs
+
 At the moment, when working in Windows with using SBT version lower than 1.4.1 there is a problem - the temporary .gitignore file is not deleted. This does not affect project creation.
 
-Template license
-----------------
+## Template license
+
 Written in 2020 by Chepkasov Sergey s.chepkasov@tinkoff.ru
 
 To the extent possible under law, the author(s) have dedicated all copyright and related
