@@ -8,7 +8,7 @@ object Dependencies {
 
   lazy val gelf: Seq[ModuleID] = Seq(
     "de.siegmar" % "logback-gelf"
-  ).map(_ % "2.1.0")
+  ).map(_ % "4.0.2")
 
   lazy val gatlingPicatinny: Seq[ModuleID] = Seq(
     "ru.tinkoff" %% "gatling-picatinny"
@@ -16,6 +16,6 @@ object Dependencies {
 
   lazy val janino: Seq[ModuleID] = Seq(
     "org.codehaus.janino" % "janino"
-  ).map(_ % "3.1.2")
+  ).map(_ % "3.1.6")
 
 }
