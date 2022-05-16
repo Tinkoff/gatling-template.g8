@@ -1,0 +1,16 @@
+package $package$.$name;format="word"$.cases
+
+import io.gatling.core.Predef._
+import ru.tinkoff.load.jdbc.Predef._
+import ru.tinkoff.load.jdbc.actions
+
+object JdbcActions {
+
+  val createTable: actions.RawSqlActionBuilder = jdbc("create table")
+    .rawSql(
+      """create table if not exists mytable(
+          |id SERIAL,
+          |name varchar(50))""".stripMargin,
+    )
+
+}

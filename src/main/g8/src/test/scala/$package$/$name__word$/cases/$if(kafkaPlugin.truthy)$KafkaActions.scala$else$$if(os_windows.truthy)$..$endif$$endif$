@@ -1,0 +1,11 @@
+package $package$.$name;format="word"$.cases
+
+import io.gatling.core.Predef._
+import ru.tinkoff.gatling.kafka.Predef._
+import ru.tinkoff.gatling.kafka.request.builder._
+
+object KafkaActions {
+
+  val sendMessage: RequestBuilder[_, Any] = kafka("my message")
+    .send("myMessage", "Hello!")
+}

@@ -1,0 +1,17 @@
+package $package$.$name;format="word"$.scenarios
+
+import io.gatling.core.Predef._
+import io.gatling.core.structure.ScenarioBuilder
+import ru.tinkoff.gatling.amqp.Predef._
+import $package$.$name;format="word"$.cases._
+
+object AmqpScenario {
+  def apply(): ScenarioBuilder = new AmqpScenario().scn
+}
+
+class AmqpScenario {
+
+  val scn: ScenarioBuilder = scenario("Amqp Scenario")
+    .exec(AmqpActions.publishMessage)
+
+}

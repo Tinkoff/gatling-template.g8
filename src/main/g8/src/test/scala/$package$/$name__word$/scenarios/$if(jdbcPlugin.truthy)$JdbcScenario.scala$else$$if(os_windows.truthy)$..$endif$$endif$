@@ -1,0 +1,16 @@
+package $package$.$name;format="word"$.scenarios
+
+import io.gatling.core.Predef._
+import io.gatling.core.structure.ScenarioBuilder
+import $package$.$name;format="word"$.cases._
+
+object JdbcScenario {
+  def apply(): ScenarioBuilder = new JdbcScenario().scn
+}
+
+class JdbcScenario {
+
+  val scn: ScenarioBuilder = scenario("Jdbc Scenario")
+    .exec(JdbcActions.createTable)
+
+}

@@ -1,0 +1,14 @@
+package $package$.$name;format="word"$.cases
+
+import io.gatling.core.Predef._
+import ru.tinkoff.gatling.amqp.Predef._
+import ru.tinkoff.gatling.amqp.request._
+
+object AmqpActions {
+
+  val publishMessage: PublishDslBuilder = amqp("Publish").publish
+    .queueExchange("my_queue")
+    .textMessage("Hello message")
+    .messageId("1")
+    .priority(0)
+}

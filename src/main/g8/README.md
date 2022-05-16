@@ -33,14 +33,14 @@ INFLUX_PREFIX - see /etc/influxdb/influxdb.conf: database
 ```
 
 Also you can pass all params from gatling-picatinny or use custom params
-read: https://github.com/TinkoffCreditSystems/gatling-picatinny/blob/master/README.md
+read: https://github.com/Tinkoff/gatling-picatinny/blob/master/README.md
 
 ## Debug
 
 1. Debug test with 1 user, requires proxy on localhost:8888, eg using Fiddler or Wireshark
 
 ```
-"Gatling / testOnly $package$.$name;format="word"$.Debug"
+"Gatling/testOnly $package$.$name;format="word"$.Debug"
 ```
 
 2. Run test from IDEA with breakpoints
@@ -52,12 +52,12 @@ $package$.GatlingRunner
 ## Launch test
 
 ```
-"Gatling / testOnly $package$.$name;format="word"$.MaxPerformance" - maximum performance test
-"Gatling / testOnly $package$.$name;format="word"$.Stability" - stability test
+"Gatling/testOnly $package$.$name;format="word"$.MaxPerformance" - maximum performance test
+"Gatling/testOnly $package$.$name;format="word"$.Stability" - stability test
 ```
 
 ## Help
 
 telegram: @qa_load
 
-gatling docs: https://gatling.io/docs/current/general
+gatling docs: https://gatling.io/docs/gatling/reference/current/core/injection/
