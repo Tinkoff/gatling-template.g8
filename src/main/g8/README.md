@@ -1,7 +1,6 @@
 # Gatling Template Project
 
-Template project for gatling performance tests
-
+Template project for Gatling performance tests
 
 ## Project structure
 
@@ -20,27 +19,27 @@ Pass this params to JVM using -DparamName="paramValue" AND -Dconfig.override_wit
 Gatling logs:
 CONSOLE_LOGGING=ON - turn on console logging
 FILE_LOGGING=ON - turn on logging in file "target/gatling/gatling.log"
-GRAYLOG_LOGGING=ON - turn on logging in graylog
+GRAYLOG_LOGGING=ON - turn on logging in Graylog
     graylog params:
-        GRAYLOG_HOST - graylog host
-        GRAYLOG_PORT - on which port graylog input is
-        GRAYLOG_STREAM - name of graylog stream
+        GRAYLOG_HOST - Graylog host
+        GRAYLOG_PORT - on which port Graylog input is
+        GRAYLOG_STREAM - the name of Graylog stream
 
-Gatling metrics in influxdb:
+Gatling metrics in InfluxDB:
 GRAPHITE_HOST - influxdb with configured graphite plugin host
 GRAPHITE_PORT - see /etc/influxdb/influxdb.conf: bind-address
 INFLUX_PREFIX - see /etc/influxdb/influxdb.conf: database
 ```
 
-Also you can pass all params from gatling-picatinny or use custom params
-read: https://github.com/TinkoffCreditSystems/gatling-picatinny/blob/master/README.md
+Also, you can pass all params from Gatling-picatinny or use custom params
+read: https://github.com/Tinkoff/gatling-picatinny/blob/master/README.md
 
 ## Debug
 
 1. Debug test with 1 user, requires proxy on localhost:8888, eg using Fiddler or Wireshark
 
 ```
-"Gatling / testOnly $package$.$name;format="word"$.Debug"
+"Gatling/testOnly $package$.$name;format="word"$.Debug"
 ```
 
 2. Run test from IDEA with breakpoints
@@ -52,12 +51,12 @@ $package$.GatlingRunner
 ## Launch test
 
 ```
-"Gatling / testOnly $package$.$name;format="word"$.MaxPerformance" - maximum performance test
-"Gatling / testOnly $package$.$name;format="word"$.Stability" - stability test
+"Gatling/testOnly $package$.$name;format="word"$.MaxPerformance" - maximum performance test
+"Gatling/testOnly $package$.$name;format="word"$.Stability" - stability test
 ```
 
 ## Help
 
-telegram: @qa_load
+Telegram: @qa_load
 
-gatling docs: https://gatling.io/docs/current/general
+Gatling docs: https://gatling.io/docs/gatling/reference/current/core/injection/

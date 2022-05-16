@@ -2,6 +2,7 @@
 /.settings
 /.classpath
 /.idea
+/.vscode
 /.project
 /project/project/
 /project/target/
