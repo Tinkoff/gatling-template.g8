@@ -43,7 +43,7 @@ Use the following parameters to create a template
 | gatling_version           | Version dependencies in project                 | `3.8.4`           |
 | sbt_gatling_version       | Version dependencies in project                 | `4.2.3`           |
 | sbt_scalafmt_version      | Version dependencies in project                 | `2.4.6`           |
-| gatling_picatinny_version | Version dependencies in project                 | `0.10.0`          |
+| gatling_picatinny_version | Version dependencies in project                 | `0.11.2`          |
 
 By default, a project will be created with the `ru.tinkoff.load` package and the name `myservice`, for the HTTP protocol,
 with the specified dependency versions
