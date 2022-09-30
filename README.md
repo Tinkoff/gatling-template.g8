@@ -9,7 +9,9 @@ create projects for HTTP (default), JDBC, AMQP, and Kafka protocols. The templat
 
 ## How to use
 
-`sbt new TinkoffCreditSystems/gatling-template.g8`
+```scala
+sbt new Tinkoff/gatling-template.g8
+```
 
 Confirm your operating system in the **os_windows** field. Set this field to **"y"** if you use Windows OS. Default
 value for Unix OS is **"n"**.
@@ -37,12 +39,11 @@ Use the following parameters to create a template
 | amqpPlugin                | Protocol used in scripts                        | `n`               |
 | kafkaPlugin               | Protocol used in scripts                        | `n`               |
 | scala_version             | Version dependencies in project                 | `2.13.8`          |
-| sbt_version               | Version dependencies in project                 | `1.6.2`           |
-| gatling_version           | Version dependencies in project                 | `3.7.6`           |
-| sbt_gatling_version       | Version dependencies in project                 | `4.1.2`           |
+| sbt_version               | Version dependencies in project                 | `1.7.1`           |
+| gatling_version           | Version dependencies in project                 | `3.8.4`           |
+| sbt_gatling_version       | Version dependencies in project                 | `4.2.3`           |
 | sbt_scalafmt_version      | Version dependencies in project                 | `2.4.6`           |
 | gatling_picatinny_version | Version dependencies in project                 | `0.10.0`          |
-| perf_ci_template_version  | Version dependencies in project                 | `4.10.0`          |
 
 By default, a project will be created with the `ru.tinkoff.load` package and the name `myservice`, for the HTTP protocol,
 with the specified dependency versions
