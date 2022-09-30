@@ -17,15 +17,15 @@ lazy val root = (project in file("."))
     libraryDependencies ++= gatlingPicatinny,
     libraryDependencies ++= janino,
     $if(amqpPlugin.truthy)$
-      libraryDependencies ++= amqpPlugin,
+    libraryDependencies ++= amqpPlugin,
     $endif$
-      $if(kafkaPlugin.truthy)$
-      libraryDependencies ++= kafkaPlugin,
+    $if(kafkaPlugin.truthy)$
+    libraryDependencies ++= kafkaPlugin,
     libraryDependencies ++= kafkaSerializer,
     libraryDependencies ++= avro4s,
     $endif$
-      $if(jdbcPlugin.truthy)$
-      libraryDependencies ++= jdbcPlugin,
+    $if(jdbcPlugin.truthy)$
+    libraryDependencies ++= jdbcPlugin,
     libraryDependencies ++= postgresJdbc,
     $endif$
     scalacOptions ++= Seq(

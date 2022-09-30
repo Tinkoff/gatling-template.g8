@@ -6,8 +6,9 @@ object Dependencies {
     "io.gatling"            % "gatling-test-framework",
   ).map(_ % "$gatling_version$" % Test)
 
+  lazy val gelf: Seq[ModuleID]             = Seq("de.siegmar" % "logback-gelf" % "4.0.2")
   lazy val gatlingPicatinny: Seq[ModuleID] = Seq("ru.tinkoff" %% "gatling-picatinny" % "$gatling_picatinny_version$")
-  lazy val janino: Seq[ModuleID]           = Seq("org.codehaus.janino" % "janino" % "3.1.2")
+  lazy val janino: Seq[ModuleID]           = Seq("org.codehaus.janino" % "janino" % "3.1.8")
   $if(amqpPlugin.truthy)$
   lazy val amqpPlugin: Seq[ModuleID]       = Seq("ru.tinkoff" %% "gatling-amqp-plugin" % "0.8.0")
   $endif$
