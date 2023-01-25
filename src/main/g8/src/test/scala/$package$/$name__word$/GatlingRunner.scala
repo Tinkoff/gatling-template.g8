@@ -1,4 +1,4 @@
-package $package$.$name;format="word"$
+package $package$.$name; format = "word" $
 
 import io.gatling.app.Gatling
 import io.gatling.core.config.GatlingPropertiesBuilder
