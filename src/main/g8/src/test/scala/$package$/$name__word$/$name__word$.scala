@@ -2,28 +2,29 @@ package $package$
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-$if(kafkaPlugin.truthy)$
+$if(kafkaPlugin.truthy) $
 import org.apache.kafka.clients.producer.ProducerConfig
 $endif$
-$if(amqpPlugin.truthy)$
+$if(amqpPlugin.truthy) $
 import ru.tinkoff.gatling.amqp.Predef._
 import ru.tinkoff.gatling.amqp.protocol.AmqpProtocolBuilder
 $endif$
 import ru.tinkoff.gatling.config.SimulationConfig._
-$if(kafkaPlugin.truthy)$
+$if(kafkaPlugin.truthy) $
 import ru.tinkoff.gatling.kafka.Predef.kafka
 import ru.tinkoff.gatling.kafka.protocol.KafkaProtocolBuilder
 $endif$
-$if(jdbcPlugin.truthy)$
+$if(jdbcPlugin.truthy) $
 import ru.tinkoff.load.jdbc.Predef._
 import ru.tinkoff.load.jdbc.protocol.JdbcProtocolBuilder
 
 import scala.concurrent.duration.DurationInt
 $endif$
 
-package object $name;format="word"$ {
+package object $name;
+format = "word" $ {
 
-  $if(http.truthy)$
+  $if(http.truthy) $
   // common http protocol params (eg headers, checks)
   val httpProtocol = http
     .baseUrl(
@@ -36,7 +37,7 @@ package object $name;format="word"$ {
     .disableFollowRedirect
   $endif$
 
-  $if(jdbcPlugin.truthy)$
+  $if(jdbcPlugin.truthy) $
   val jdbcProtocol: JdbcProtocolBuilder = DB
     .url(getStringParam("dbUrl"))
     .username(getStringParam("dbUser"))
@@ -44,7 +45,7 @@ package object $name;format="word"$ {
     .connectionTimeout(2.minute)
   $endif$
 
-  $if(amqpPlugin.truthy)$
+  $if(amqpPlugin.truthy) $
   val amqpHost: String     = getStringParam("amqpHost")
   val amqpPort: Int        = getIntParam("amqpPort")
   val amqpLogin: String    = getStringParam("amqpLogin")
@@ -63,7 +64,7 @@ package object $name;format="word"$ {
     .consumerThreadsCount(8)
     .usePersistentDeliveryMode
   $endif$
-  $if(kafkaPlugin.truthy)$
+  $if(kafkaPlugin.truthy) $
   val kafkaProtocol: KafkaProtocolBuilder = kafka
     .topic("myTopic")
     .properties(
